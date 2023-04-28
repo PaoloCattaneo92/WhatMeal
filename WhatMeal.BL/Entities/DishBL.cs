@@ -32,6 +32,11 @@ public class DishBL
         return JsonMealRepository.Instance.DeleteDish(name);
     }
 
+    public List<Dish> GetAll()
+    {
+        return JsonMealRepository.Instance.GetDishes().ToList();
+    }
+
     public List<Dish> Get(bool? random, int? count, DishType? type)
     {
         random ??= true;

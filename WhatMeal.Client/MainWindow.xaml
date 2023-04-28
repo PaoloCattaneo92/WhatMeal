@@ -6,15 +6,67 @@
         xmlns:local="clr-namespace:WhatMeal.Client"
         mc:Ignorable="d"
         Background="LightGray"
+        Loaded="Window_Loaded"
         Title="WhatMeal" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
-            <RowDefinition Height="40" />
+            <RowDefinition Height="20" />
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="1" Background="Gray" VerticalAlignment="Stretch">
-            <Ellipse x:Name="elliStatus" Width="40" Height="40" StrokeThickness="1" Stroke="Black"
-                     Fill="Red" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="Add dish" Margin="10" />
+            <ComboBox Name="cbTypeAdd" Margin="10" />
+            <TextBox Name="tbName" Margin="10"/>
+            <TextBox Name="tbIngredients" Margin="10"/>
+            <Button Name="btnAddDish" 
+                    Background="LightGreen"
+                    Margin="10"
+                    Click="btnAddDish_Click"
+                    >Add Dish</Button>
         </StackPanel>
-     </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Saved dishes"
+                       Margin="10" />
+            
+            <ComboBox Name="cbTypeList" 
+                      SelectionChanged="cbTypeList_SelectionChanged"
+                      Grid.Row="1"
+                      Margin="10" />
+
+            <ListView x:Name="lvDishes" 
+                      Grid.Row="2"
+                      Margin="10"
+                      >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <WrapPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Type}" Margin="5" />
+                            <TextBlock Text="{Binding Name}" Margin="5" />
+                        </WrapPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+        <StackPanel Orientation="Vertical" Grid.Column="1"
+                    Margin="10,10,10,5" >
+        </StackPanel>
+
+        <ProgressBar x:Name="pbar" IsIndeterminate="True"
+                     Grid.Row="1"
+                     Grid.ColumnSpan="2" Margin="10,5"
+                     Visibility="Hidden"
+                     />
+    </Grid>
 </Window>
