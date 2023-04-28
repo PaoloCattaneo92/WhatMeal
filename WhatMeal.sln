@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhatMeal.Model", "WhatMeal.Model\WhatMeal.Model.csproj", "{6950C1A4-9222-4396-AB70-F6025DA67807}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhatMeal.BL", "WhatMeal.BL\WhatMeal.BL.csproj", "{5916F5BE-07E0-4D8D-893E-251617F6B22B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhatMeal.DAL", "WhatMeal.DAL\WhatMeal.DAL.csproj", "{1D20B25D-0EBE-429A-A26B-B25DF9FF5B30}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhatMeal.Test", "WhatMeal.Test\WhatMeal.Test.csproj", "{378217AF-7964-4EF5-81AD-572EFEA53AF5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhatMeal.Client", "WhatMeal.Client\WhatMeal.Client.csproj", "{33881961-50B5-4FFA-B316-EEBD8B4DB94B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatMeal.API", "WhatMeal.API\WhatMeal.API.csproj", "{AC9334EF-50EA-42B9-B26D-DE7693A64B56}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6950C1A4-9222-4396-AB70-F6025DA67807}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6950C1A4-9222-4396-AB70-F6025DA67807}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6950C1A4-9222-4396-AB70-F6025DA67807}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6950C1A4-9222-4396-AB70-F6025DA67807}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5916F5BE-07E0-4D8D-893E-251617F6B22B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5916F5BE-07E0-4D8D-893E-251617F6B22B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5916F5BE-07E0-4D8D-893E-251617F6B22B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5916F5BE-07E0-4D8D-893E-251617F6B22B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D20B25D-0EBE-429A-A26B-B25DF9FF5B30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D20B25D-0EBE-429A-A26B-B25DF9FF5B30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D20B25D-0EBE-429A-A26B-B25DF9FF5B30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D20B25D-0EBE-429A-A26B-B25DF9FF5B30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{378217AF-7964-4EF5-81AD-572EFEA53AF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{378217AF-7964-4EF5-81AD-572EFEA53AF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{378217AF-7964-4EF5-81AD-572EFEA53AF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{378217AF-7964-4EF5-81AD-572EFEA53AF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33881961-50B5-4FFA-B316-EEBD8B4DB94B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33881961-50B5-4FFA-B316-EEBD8B4DB94B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33881961-50B5-4FFA-B316-EEBD8B4DB94B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33881961-50B5-4FFA-B316-EEBD8B4DB94B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC9334EF-50EA-42B9-B26D-DE7693A64B56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC9334EF-50EA-42B9-B26D-DE7693A64B56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC9334EF-50EA-42B9-B26D-DE7693A64B56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC9334EF-50EA-42B9-B26D-DE7693A64B56}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {203D98E3-7411-4359-B040-90B8C63AE286}
+	EndGlobalSection
+EndGlobal

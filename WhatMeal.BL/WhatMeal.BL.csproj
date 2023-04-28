@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WhatMeal.DAL\WhatMeal.DAL.csproj" />
+    <ProjectReference Include="..\WhatMeal.Model\WhatMeal.Model.csproj" />
+  </ItemGroup>
+
+</Project>

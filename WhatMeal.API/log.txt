@@ -1,0 +1,54 @@
+2023-04-27 17:13:46.431 +02:00 [INF] Requested 1 dished of type "RANDOM": found 0
+2023-04-27 17:13:50.834 +02:00 [INF] Requested 1 dished of type "RANDOM": found 0
+2023-04-27 17:13:51.635 +02:00 [INF] Requested 1 dished of type "RANDOM": found 0
+2023-04-27 17:13:52.278 +02:00 [INF] Requested 1 dished of type "RANDOM": found 0
+2023-04-27 17:13:52.823 +02:00 [INF] Requested 1 dished of type "RANDOM": found 0
+2023-04-27 17:21:47.564 +02:00 [INF] Requested GET 10 dished of type "RANDOM": found 1
+2023-04-27 17:21:47.795 +02:00 [INF] Requested GET 10 dished of type "RANDOM": found 1
+2023-04-27 17:21:50.911 +02:00 [INF] Requested GET 10 dished of type "RANDOM": found 1
+2023-04-27 17:21:54.871 +02:00 [INF] Requested GET 1 dished of type "RANDOM": found 1
+2023-04-27 17:21:58.907 +02:00 [INF] Requested GET 1 dished of type "PASTA": found 0
+2023-04-27 17:22:00.937 +02:00 [INF] Requested GET 1 dished of type "PASTA": found 0
+2023-04-27 17:22:01.392 +02:00 [INF] Requested GET 1 dished of type "PASTA": found 0
+2023-04-27 17:22:01.622 +02:00 [INF] Requested GET 1 dished of type "PASTA": found 0
+2023-04-27 17:22:01.854 +02:00 [INF] Requested GET 1 dished of type "PASTA": found 0
+2023-04-27 17:22:05.737 +02:00 [INF] Requested GET 1 dished of type "PASTA": found 0
+2023-04-27 17:22:06.200 +02:00 [INF] Requested GET 1 dished of type "PASTA": found 0
+2023-04-27 17:22:06.596 +02:00 [INF] Requested GET 1 dished of type "PASTA": found 0
+2023-04-27 17:22:18.290 +02:00 [INF] Requested GET 1 dished of type "PASTA": found 0
+2023-04-27 17:22:18.621 +02:00 [INF] Requested GET 1 dished of type "PASTA": found 0
+2023-04-27 17:22:18.973 +02:00 [INF] Requested GET 1 dished of type "PASTA": found 0
+2023-04-27 17:22:19.378 +02:00 [INF] Requested GET 1 dished of type "PASTA": found 0
+2023-04-27 17:22:40.168 +02:00 [INF] Requested GET 1 dished of type "PASTA": found 0
+2023-04-27 17:22:41.565 +02:00 [INF] Requested GET 1 dished of type "CARNE": found 1
+2023-04-27 17:22:42.488 +02:00 [INF] Requested GET 1 dished of type "CARNE": found 1
+2023-04-27 17:22:42.908 +02:00 [INF] Requested GET 1 dished of type "CARNE": found 1
+2023-04-27 17:22:43.263 +02:00 [INF] Requested GET 1 dished of type "CARNE": found 1
+2023-04-27 17:22:43.570 +02:00 [INF] Requested GET 1 dished of type "CARNE": found 1
+2023-04-27 17:22:43.963 +02:00 [INF] Requested GET 1 dished of type "CARNE": found 1
+2023-04-27 17:22:44.287 +02:00 [INF] Requested GET 1 dished of type "CARNE": found 1
+2023-04-27 17:22:44.601 +02:00 [INF] Requested GET 1 dished of type "CARNE": found 1
+2023-04-27 17:22:47.001 +02:00 [INF] Requested GET 5 dished of type "CARNE": found 2
+2023-04-27 17:22:49.412 +02:00 [INF] Requested GET 5 dished of type "CARNE": found 2
+2023-04-27 17:22:49.856 +02:00 [INF] Requested GET 5 dished of type "CARNE": found 2
+2023-04-27 17:23:14.768 +02:00 [INF] Requested GET 5 dished of type "PESCE": found 1
+2023-04-27 17:23:17.300 +02:00 [INF] Requested GET 5 dished of type "PESCE": found 1
+2023-04-27 17:23:21.198 +02:00 [INF] Requested GET 0 dished of type "12": found 0
+2023-04-27 17:23:26.148 +02:00 [INF] Requested GET 12 dished of type "RANDOM": found 3
+2023-04-27 17:23:28.977 +02:00 [INF] Requested GET 12 dished of type "RANDOM": found 3
+2023-04-27 17:23:29.348 +02:00 [INF] Requested GET 12 dished of type "RANDOM": found 3
+2023-04-27 17:23:29.724 +02:00 [INF] Requested GET 12 dished of type "RANDOM": found 3
+2023-04-27 17:23:34.054 +02:00 [INF] Requested GET 12 dished of type "RANDOM": found 3
+2023-04-27 17:23:34.356 +02:00 [INF] Requested GET 12 dished of type "RANDOM": found 3
+2023-04-27 17:23:35.845 +02:00 [INF] Requested GET 12 dished of type "RANDOM": found 3
+2023-04-27 17:23:36.136 +02:00 [INF] Requested GET 12 dished of type "RANDOM": found 3
+2023-04-27 17:23:44.709 +02:00 [INF] Requested GET 12 dished of type "RANDOM": found 3
+2023-04-27 17:23:45.212 +02:00 [INF] Requested GET 12 dished of type "RANDOM": found 3
+2023-04-27 17:23:45.621 +02:00 [INF] Requested GET 12 dished of type "RANDOM": found 3
+2023-04-28 05:57:49.990 +02:00 [INF] Requested version: 1.0.0
+2023-04-28 05:57:51.299 +02:00 [INF] Requested version: 1.0.0
+2023-04-28 05:57:51.817 +02:00 [INF] Requested version: 1.0.0
+2023-04-28 05:57:56.046 +02:00 [INF] Requested GET null dished of type null: found 0
+2023-04-28 05:57:58.523 +02:00 [INF] Requested GET null dished of type null: found 0
+2023-04-28 05:58:13.432 +02:00 [INF] Dish 'Petto di pollo' updated
+2023-04-28 05:58:22.498 +02:00 [INF] Requested GET null dished of type null: found 1
