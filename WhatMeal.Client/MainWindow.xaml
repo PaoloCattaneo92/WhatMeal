@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WhatMeal.Client"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Background="LightGray"
+        Title="WhatMeal" Height="450" Width="800">
     <Grid>
-
-    </Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1" Background="Gray" VerticalAlignment="Stretch">
+            <Ellipse x:Name="elliStatus" Width="40" Height="40" StrokeThickness="1" Stroke="Black"
+                     Fill="Red" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0" />
+        </StackPanel>
+     </Grid>
 </Window>

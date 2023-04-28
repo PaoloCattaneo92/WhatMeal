@@ -16,21 +16,21 @@ internal class DishEPMapper : IEPMapper
     {
         app.MapGet("dish", (bool? random, int? count, DishType? type) =>
         {
-            var result = MealBL.Instance.GetDish(random, count, type);
+            var result = WhatMealBL.Dish.Get(random, count, type);
             Log.Logger.Information("Requested GET {count} dished of type {type}: found {length}", count, type, result.Count);
             return Results.Ok(result);
         }).WithTags(Tag).Produces<List<Dish>>(StatusCodes.Status200OK);
 
         app.MapPost("dish", (Dish dish) =>
         {
-            JsonMealRepository.Instance.InsertUpdateDish(dish);
+            WhatMealBL.Dish.InsertUpdate(dish);
             Log.Logger.Information("Dish '{name}' updated", dish.Name);
             return Results.Ok($"Dish '{dish.Name}' updated");
         }).WithTags(Tag).Produces(StatusCodes.Status200OK);
 
         app.MapDelete("dish", (string name) =>
         {
-            var result = JsonMealRepository.Instance.DeleteDish(name);
+            var result = WhatMealBL.Dish.Delete(name);
             Log.Logger.Information("Requested DELETE of dish {name}, result is {result}", name, result);
             return result 
             ? Results.Ok($"Dish '{name}' deleted") 

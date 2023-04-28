@@ -9,7 +9,8 @@ namespace WhatMeal.Model;
 
 public record Dish
 (
-    DishType Type,
     [property:JsonKey]
-    string Name
+    string Name,
+    DishType Type,
+    List<string> Ingredients
 );

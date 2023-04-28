@@ -8,22 +8,31 @@ using WhatMeal.Model;
 
 namespace WhatMeal.BL;
 
-public class MealBL
+public class DishBL
 {
-    private readonly Random rand;
-
-    public static MealBL Instance { get; set; } = new MealBL();
-
-    public MealBL(Random random)
+    public void InsertUpdate(Dish dish)
     {
-        this.rand = random;
+        if (dish == null)
+        {
+            return;
+        }
+
+        //TODO add validation and field normalization
+
+        JsonMealRepository.Instance.InsertUpdateDish(dish);
     }
 
-    public MealBL() : this(new Random())
+    public bool Delete(string name)
     {
+        if (name == null)
+        {
+            return false;
+        }
+
+        return JsonMealRepository.Instance.DeleteDish(name);
     }
 
-    public List<Dish> GetDish(bool? random, int? count, DishType? type)
+    public List<Dish> Get(bool? random, int? count, DishType? type)
     {
         random ??= true;
         count ??= 1;
@@ -39,7 +48,7 @@ public class MealBL
         List<Dish> result;
         if (random.Value)
         {
-            result = dishes.OrderBy(d => rand.Next()).Take(count.Value).ToList();
+            result = dishes.OrderBy(d => Random.Shared.Next()).Take(count.Value).ToList();
         }
         else
         {
