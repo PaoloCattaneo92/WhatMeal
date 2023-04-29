@@ -1,9 +1,5 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
-using Serilog;
-using System.Reflection.Metadata.Ecma335;
-using System.Xml.Linq;
+﻿using Serilog;
 using WhatMeal.BL;
-using WhatMeal.DAL;
 using WhatMeal.Model;
 
 namespace WhatMeal.API;

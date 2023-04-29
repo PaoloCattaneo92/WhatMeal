@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
-using Serilog;
+﻿using Serilog;
 
 namespace WhatMeal.API;
 

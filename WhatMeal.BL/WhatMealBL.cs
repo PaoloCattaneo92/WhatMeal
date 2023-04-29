@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WhatMeal.DAL;
-using WhatMeal.Model;
-
-namespace WhatMeal.BL;
+﻿namespace WhatMeal.BL;
 
 public class WhatMealBL
 {
