@@ -70,7 +70,8 @@ public class DishBL
             filtered = filtered.Where(d => !randomized.Any(d2 => d2.Name == d.Name)).ToList();
             if (filtered.Count == 0)
             {
-                break;
+                throw new Exception($"No items found for type {type} after filter on {dishes.Count()} dishes");
+                //break;
             }
 
             var picked = filtered[Random.Shared.Next(0, filtered.Count)];

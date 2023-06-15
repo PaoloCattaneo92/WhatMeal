@@ -6,7 +6,8 @@ public enum DishType
     PASTA = 100,
     PANE = 101,
     RISO = 102,
-    CARNE = 200,
+    CARNE_BIANCA = 200,
     PESCE = 201,
+    CARNE_ROSSA = 202,
     VERDURE = 300,
 }

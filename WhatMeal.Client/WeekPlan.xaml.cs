@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,7 @@ namespace WhatMeal.Client
         private readonly Meal[,] meals = new Meal[7, 7];
 
         private readonly List<Dish> dishes;
+        private readonly List<WeekValidationRule> rules = WeekValidationRule.Default;
 
         public WeekPlan()
         {
@@ -33,8 +35,24 @@ namespace WhatMeal.Client
                 
             }
             dishes = WhatMealBL.Dish.GetAll();
-            var week = WhatMealBL.RandomizeWeek(dishes);
-            MessageBox.Show(week.Description());
+
+            Week? week = null;
+            int tries = 0;
+            while(tries < 5000)
+            {
+                week = WhatMealBL.RandomizeWeek(dishes);
+                tries++;
+                if(rules.All(r => r.Validate(week)))
+                {
+                    break;
+                }
+                else
+                {
+                    week = null;
+                }
+            }
+
+            MessageBox.Show($"After {tries} tries the week is: " + week?.Description() ?? "null");
         }
     }
 }
