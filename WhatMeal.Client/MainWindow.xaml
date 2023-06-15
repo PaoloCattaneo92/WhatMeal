@@ -7,9 +7,12 @@
         mc:Ignorable="d"
         Background="LightGray"
         Loaded="Window_Loaded"
-        Title="WhatMeal" Height="450" Width="800">
+        Title="WhatMeal" Height="600" Width="800">
+    <Window.Resources>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="20" />
         </Grid.RowDefinitions>
@@ -19,13 +22,16 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Orientation="Vertical">
-            <TextBlock Text="Add dish" Margin="10" />
-            <ComboBox Name="cbTypeAdd" Margin="10" />
-            <TextBox Name="tbName" Margin="10"/>
-            <TextBox Name="tbIngredients" Margin="10"/>
+            <TextBlock Text="Add dish" FontWeight="Bold" Margin="5" />
+            <TextBlock Text="Type:" Margin="{StaticResource defMargin}" />
+            <ComboBox Name="cbTypeAdd" Margin="{StaticResource defMargin}" />
+            <TextBlock Text="Name:" Margin="{StaticResource defMargin}" />
+            <TextBox Name="tbName" Margin="{StaticResource defMargin}"/>
+            <TextBlock Text="Ingredients (optional):" Margin="{StaticResource defMargin}" />
+            <TextBox Name="tbIngredients" Margin="{StaticResource defMargin}"/>
             <Button Name="btnAddDish" 
                     Background="LightGreen"
-                    Margin="10"
+                    Margin="5"
                     Click="btnAddDish_Click"
                     >Add Dish</Button>
         </StackPanel>
@@ -59,6 +65,43 @@
                 </ListView.ItemTemplate>
             </ListView>
         </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <WrapPanel>
+                <TextBlock Text="Get " Margin="{StaticResource defMargin}" />
+                <TextBox x:Name="tbGetRandomCount" Margin="{StaticResource defMargin}" Width="20" Text="1" />
+                <TextBlock Text=" random dishes of type " Margin="{StaticResource defMargin}" />
+                <ComboBox Name="cbTypeGetRandom" Margin="{StaticResource defMargin}" Width="190" />
+            </WrapPanel>
+
+            <Button x:Name="btnGetRandom"
+                    Grid.Row="1"
+                    Content="Randomize" Background="Orange" Margin="{StaticResource defMargin}"
+                    Click="btnGetRandom_Click" />
+
+            <ListView x:Name="lvRandomized" Grid.Row="2" Margin="{StaticResource defMargin}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <WrapPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Type}" Margin="5" />
+                            <TextBlock Text="{Binding Name}" Margin="5" />
+                        </WrapPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+
+        <Button x:Name="btnWeek" Content="Randomize Week" Grid.Row="1"
+                    Grid.Column="1" Background="LightBlue" Margin="{StaticResource defMargin}"
+                Click="btnWeek_Click"
+                />
+
         <StackPanel Orientation="Vertical" Grid.Column="1"
                     Margin="10,10,10,5" >
         </StackPanel>

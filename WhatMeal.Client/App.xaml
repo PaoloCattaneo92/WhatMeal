@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:WhatMeal.Client"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Thickness x:Key="defMargin">5</Thickness>
     </Application.Resources>
 </Application>

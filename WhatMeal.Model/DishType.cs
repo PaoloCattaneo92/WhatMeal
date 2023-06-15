@@ -3,8 +3,10 @@
 public enum DishType
 {
     ALL = 0,
-    PASTA = 1,
-    CARNE = 2,
-    PESCE = 3,
-    VERDURE = 4
+    PASTA = 100,
+    PANE = 101,
+    RISO = 102,
+    CARNE = 200,
+    PESCE = 201,
+    VERDURE = 300,
 }

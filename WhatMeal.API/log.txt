@@ -52,3 +52,32 @@
 2023-04-28 05:57:58.523 +02:00 [INF] Requested GET null dished of type null: found 0
 2023-04-28 05:58:13.432 +02:00 [INF] Dish 'Petto di pollo' updated
 2023-04-28 05:58:22.498 +02:00 [INF] Requested GET null dished of type null: found 1
+2023-04-29 16:33:12.242 +02:00 [INF] Requested GET null dished of type "CARNE": found 0
+2023-04-29 16:33:13.957 +02:00 [INF] Requested GET null dished of type "PASTA": found 1
+2023-04-29 16:33:43.128 +02:00 [INF] Requested version: 1.0.0
+2023-04-29 16:33:44.100 +02:00 [INF] Requested version: 1.0.0
+2023-04-29 16:35:42.918 +02:00 [INF] Requested GET null dished of type "PASTA": found 1
+2023-04-29 16:35:43.975 +02:00 [INF] Requested GET null dished of type "PASTA": found 1
+2023-04-29 16:35:46.615 +02:00 [INF] Requested GET null dished of type "ALL": found 1
+2023-04-29 16:35:48.798 +02:00 [INF] Requested GET null dished of type "ALL": found 1
+2023-04-29 16:35:49.081 +02:00 [INF] Requested GET null dished of type "ALL": found 1
+2023-04-29 16:38:12.651 +02:00 [INF] Requested GET null dished of type null: found 1
+2023-04-29 16:38:13.615 +02:00 [INF] Requested GET null dished of type null: found 1
+2023-04-29 16:38:21.524 +02:00 [INF] Requested GET 10 dished of type null: found 2
+2023-04-29 16:38:24.034 +02:00 [INF] Requested GET 10 dished of type null: found 2
+2023-04-29 16:38:56.241 +02:00 [INF] Dish 'Cosce di pollo' updated
+2023-04-29 16:39:36.970 +02:00 [INF] Dish 'Pasta al tonno' updated
+2023-04-29 16:39:38.534 +02:00 [INF] Dish 'Pasta al tonno' updated
+2023-04-29 16:39:40.921 +02:00 [INF] Requested GET 10 dished of type null: found 4
+2023-04-29 16:39:56.661 +02:00 [INF] Dish 'Pasta alle zucchine' updated
+2023-04-29 16:40:08.854 +02:00 [INF] Dish 'Pasta in bianco' updated
+2023-04-29 16:40:40.870 +02:00 [INF] Dish 'Pasta al pesto' updated
+2023-04-29 16:41:54.919 +02:00 [INF] Dish 'Insalata caprese' updated
+2023-04-29 16:42:00.973 +02:00 [INF] Requested GET 1 dished of type "PASTA": found 1
+2023-04-29 16:42:02.761 +02:00 [INF] Requested GET 1 dished of type "PASTA": found 1
+2023-04-29 16:42:03.915 +02:00 [INF] Requested GET 1 dished of type "PASTA": found 1
+2023-04-29 16:42:04.530 +02:00 [INF] Requested GET 1 dished of type "PASTA": found 1
+2023-04-29 16:42:05.326 +02:00 [INF] Requested GET 1 dished of type "PASTA": found 1
+2023-04-29 16:42:06.004 +02:00 [INF] Requested GET 1 dished of type "PASTA": found 1
+2023-04-29 16:42:06.830 +02:00 [INF] Requested GET 1 dished of type "PASTA": found 1
+2023-04-29 16:42:07.322 +02:00 [INF] Requested GET 1 dished of type "PASTA": found 1

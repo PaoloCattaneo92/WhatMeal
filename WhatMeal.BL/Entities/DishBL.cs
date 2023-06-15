@@ -57,4 +57,26 @@ public class DishBL
 
         return result;
     }
+
+    public List<Dish> GetRandom(int count, DishType type, IEnumerable<Dish> dishes)
+    {
+        var filtered = type != DishType.ALL
+            ? dishes.Where(d => d.Type == type).ToList()
+            : dishes.ToList();
+
+        var randomized = new List<Dish>();
+        while (randomized.Count < count)
+        {
+            filtered = filtered.Where(d => !randomized.Any(d2 => d2.Name == d.Name)).ToList();
+            if (filtered.Count == 0)
+            {
+                break;
+            }
+
+            var picked = filtered[Random.Shared.Next(0, filtered.Count)];
+            randomized.Add(picked);
+        }
+
+        return randomized;
+    }
 }
