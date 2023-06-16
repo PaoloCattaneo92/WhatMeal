@@ -1,7 +1,7 @@
 ﻿namespace WhatMeal.Model;
 
 public record Meal(
-    Dish Carbo,
-    Dish Protein,
-    Dish Vegetables
+    SingleDish Carbo,
+    SingleDish Protein,
+    SingleDish Vegetables
 );

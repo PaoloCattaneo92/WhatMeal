@@ -2,7 +2,7 @@
 
 namespace WhatMeal.Model;
 
-public record Dish
+public record SingleDish
 (
     [property:JsonKey]
     string Name,

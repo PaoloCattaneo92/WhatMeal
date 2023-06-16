@@ -5,7 +5,7 @@ namespace WhatMeal.BL;
 
 public class DishBL
 {
-    public void InsertUpdate(Dish dish)
+    public void InsertUpdate(SingleDish dish)
     {
         if (dish == null)
         {
@@ -27,12 +27,12 @@ public class DishBL
         return JsonMealRepository.Instance.DeleteDish(name);
     }
 
-    public List<Dish> GetAll()
+    public List<SingleDish> GetAll()
     {
         return JsonMealRepository.Instance.GetDishes().ToList();
     }
 
-    public List<Dish> Get(bool? random, int? count, DishType? type)
+    public List<SingleDish> Get(bool? random, int? count, DishType? type)
     {
         random ??= true;
         count ??= 1;
@@ -45,7 +45,7 @@ public class DishBL
             dishes = dishes.Where(d => d.Type == type);
         }
 
-        List<Dish> result;
+        List<SingleDish> result;
         if (random.Value)
         {
             result = dishes.OrderBy(d => Random.Shared.Next()).Take(count.Value).ToList();
@@ -58,13 +58,13 @@ public class DishBL
         return result;
     }
 
-    public List<Dish> GetRandom(int count, DishType type, IEnumerable<Dish> dishes)
+    public List<SingleDish> GetRandom(int count, DishType type, IEnumerable<SingleDish> dishes)
     {
         var filtered = type != DishType.ALL
             ? dishes.Where(d => d.Type == type).ToList()
             : dishes.ToList();
 
-        var randomized = new List<Dish>();
+        var randomized = new List<SingleDish>();
         while (randomized.Count < count)
         {
             filtered = filtered.Where(d => !randomized.Any(d2 => d2.Name == d.Name)).ToList();

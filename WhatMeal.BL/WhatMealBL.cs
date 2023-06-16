@@ -6,7 +6,7 @@ public class WhatMealBL
 {
     public static DishBL Dish { get; set; } = new DishBL();
 
-    public static Day RandomizeDay(List<Dish>? dishes = null)
+    public static Day RandomizeDay(List<SingleDish>? dishes = null)
     {
         dishes ??= Dish.GetAll();
 
@@ -27,7 +27,7 @@ public class WhatMealBL
         return day;
     }
 
-    public static Week RandomizeWeek(List<Dish>? dishes = null)
+    public static Week RandomizeWeek(List<SingleDish>? dishes = null)
     {
         dishes ??= Dish.GetAll();
         var week = new Week();
