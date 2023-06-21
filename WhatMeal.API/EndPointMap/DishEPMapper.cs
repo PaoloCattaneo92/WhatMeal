@@ -15,9 +15,9 @@ internal class DishEPMapper : IEPMapper
             var result = WhatMealBL.Dish.Get(random, count, type);
             Log.Logger.Information("Requested GET {count} dished of type {type}: found {length}", count, type, result.Count);
             return Results.Ok(result);
-        }).WithTags(Tag).Produces<List<SingleDish>>(StatusCodes.Status200OK);
+        }).WithTags(Tag).Produces<List<Dish>>(StatusCodes.Status200OK);
 
-        app.MapPost("dish", (SingleDish dish) =>
+        app.MapPost("dish", (Dish dish) =>
         {
             WhatMealBL.Dish.InsertUpdate(dish);
             Log.Logger.Information("Dish '{name}' updated", dish.Name);

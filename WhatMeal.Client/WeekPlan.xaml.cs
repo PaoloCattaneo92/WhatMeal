@@ -24,7 +24,7 @@ namespace WhatMeal.Client
     {
         private readonly Meal[,] meals = new Meal[7, 7];
 
-        private readonly List<SingleDish> dishes;
+        private readonly List<Dish> dishes;
         private readonly List<WeekValidationRule> rules = WeekValidationRule.Default;
 
         public WeekPlan()

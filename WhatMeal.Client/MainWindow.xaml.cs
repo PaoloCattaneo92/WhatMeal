@@ -16,7 +16,7 @@ namespace WhatMeal.Client
     {
         private const string DATA_FOLDER = "C:\\whatmeal\\data";
 
-        private List<SingleDish> dishes = Enumerable.Empty<SingleDish>().ToList();
+        private List<Dish> dishes = Enumerable.Empty<Dish>().ToList();
 
         public MainWindow()
         {
@@ -51,7 +51,7 @@ namespace WhatMeal.Client
             UpdateItemSource(lvDishes, filtered);
         }
 
-        private void UpdateItemSource(ListView listView, IEnumerable<SingleDish> values)
+        private void UpdateItemSource(ListView listView, IEnumerable<Dish> values)
         {
             listView.ItemsSource = null;
             listView.ItemsSource = values;
@@ -59,7 +59,7 @@ namespace WhatMeal.Client
 
         private void btnAddDish_Click(object sender, RoutedEventArgs e)
         {
-            var dish = new SingleDish(
+            var dish = new Dish(
                 tbName.Text, 
                 (DishType)cbTypeAdd.SelectedItem, 
                 tbIngredients.Text.Split(',').Select(i => i.Trim()).ToList());

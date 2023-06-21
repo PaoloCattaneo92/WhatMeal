@@ -11,6 +11,6 @@ public record MultiDish
 (
     [property: JsonKey]
     string Name,
-    DishType Type,
+    List<DishType> Types,
     List<string> Ingredients
 );

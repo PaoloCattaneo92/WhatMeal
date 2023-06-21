@@ -8,5 +8,5 @@ namespace WhatMeal.Model;
 
 public record FullMeal
 (
-    List<SingleDish> Dishes
+    List<Dish> Dishes
 );

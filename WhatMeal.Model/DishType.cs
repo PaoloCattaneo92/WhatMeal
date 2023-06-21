@@ -9,5 +9,7 @@ public enum DishType
     CARNE_BIANCA = 200,
     PESCE = 201,
     CARNE_ROSSA = 202,
+    PROTEINE_VEGANE = 203,
+    ALTRE_PROTEINE = 204,
     VERDURE = 300,
 }

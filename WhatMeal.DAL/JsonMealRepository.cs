@@ -14,18 +14,18 @@ public class JsonMealRepository : IMealRepository
         context = new JsonContext(dataFolder);
     }
 
-    public IEnumerable<SingleDish> GetDishes()
+    public IEnumerable<Dish> GetDishes()
     {
-        return context.Get<SingleDish>();
+        return context.Get<Dish>();
     }
 
-    public void InsertUpdateDish(SingleDish dish)
+    public void InsertUpdateDish(Dish dish)
     {
         context.InsertUpdate(dish);
     }
 
     public bool DeleteDish(string name)
     {
-        return context.Delete<SingleDish>(name);
+        return context.Delete<Dish>(name);
     }
 }

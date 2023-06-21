@@ -4,7 +4,7 @@ namespace WhatMeal.DAL;
 
 public interface IMealRepository
 {
-    IEnumerable<SingleDish> GetDishes();
-    void InsertUpdateDish(SingleDish dish);
+    IEnumerable<Dish> GetDishes();
+    void InsertUpdateDish(Dish dish);
     bool DeleteDish(string name);
 }
