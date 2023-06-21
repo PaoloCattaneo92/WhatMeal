@@ -3,12 +3,20 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WhatMeal.Client"
+        xmlns:local="clr-namespace:WhatMeal.Client" xmlns:controls="clr-namespace:WhatMeal.Client.Controls"
         mc:Ignorable="d"
         Background="LightGray"
         Loaded="Window_Loaded"
         Title="WhatMeal" Height="600" Width="800">
     <Window.Resources>
+        <!--<local:DishTypeToImgConverter x:Key="DishTypeToImgConverter" />-->
+        <local:DishTypesToColorConverter x:Key="DishTypesToColorConverter" />
+        <local:DishTypeToVisibilityConverter x:Key="DishTypeToVisibilityConverter" />
+        <Style x:Key="rectDishType" TargetType="Rectangle">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Width" Value="20" />
+            <Setter Property="Stroke" Value="Black" />
+        </Style> 
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -23,12 +31,13 @@
 
         <StackPanel Orientation="Vertical">
             <TextBlock Text="Add dish" FontWeight="Bold" Margin="5" />
-            <TextBlock Text="Type:" Margin="{StaticResource defMargin}" />
-            <ComboBox Name="cbTypeAdd" Margin="{StaticResource defMargin}" />
+            <TextBlock Text="Types:" Margin="{StaticResource defMargin}" />
+            <WrapPanel Name="wpTypes" Orientation="Horizontal" Margin="{StaticResource defMargin}">
+            </WrapPanel>
             <TextBlock Text="Name:" Margin="{StaticResource defMargin}" />
             <TextBox Name="tbName" Margin="{StaticResource defMargin}"/>
-            <TextBlock Text="Ingredients (optional):" Margin="{StaticResource defMargin}" />
-            <TextBox Name="tbIngredients" Margin="{StaticResource defMargin}"/>
+            <TextBlock Text="Ingredients (optional):" Margin="{StaticResource defMargin}" Visibility="Collapsed" />
+            <TextBox Name="tbIngredients" Margin="{StaticResource defMargin}" Visibility="Collapsed" />
             <Button Name="btnAddDish" 
                     Background="LightGreen"
                     Margin="5"
@@ -58,7 +67,16 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <WrapPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding Type}" Margin="5" />
+                            <!--<Image Source="{Binding Types, Converter={StaticResource DishTypeToImgConverter}}" Margin="5" Width="20" />-->
+                            <Rectangle Style="{StaticResource rectDishType}"
+                                       Visibility="{Binding Types, Converter={StaticResource DishTypeToVisibilityConverter}, ConverterParameter=0}"
+                            Fill="{Binding Types, Converter={StaticResource DishTypesToColorConverter}, ConverterParameter=0}" />
+                            <Rectangle Style="{StaticResource rectDishType}"
+                                       Visibility="{Binding Types, Converter={StaticResource DishTypeToVisibilityConverter}, ConverterParameter=1}"
+                            Fill="{Binding Types, Converter={StaticResource DishTypesToColorConverter}, ConverterParameter=1}" />
+                            <Rectangle Style="{StaticResource rectDishType}"
+                                       Visibility="{Binding Types, Converter={StaticResource DishTypeToVisibilityConverter}, ConverterParameter=2}"
+                            Fill="{Binding Types, Converter={StaticResource DishTypesToColorConverter}, ConverterParameter=2}" />
                             <TextBlock Text="{Binding Name}" Margin="5" />
                         </WrapPanel>
                     </DataTemplate>
@@ -89,7 +107,7 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <WrapPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding Type}" Margin="5" />
+                            <Image Source="{Binding Types, Converter={StaticResource DishTypeToImgConverter}}" Margin="5" Width="20" />
                             <TextBlock Text="{Binding Name}" Margin="5" />
                         </WrapPanel>
                     </DataTemplate>

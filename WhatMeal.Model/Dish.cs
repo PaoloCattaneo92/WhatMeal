@@ -6,6 +6,6 @@ public record Dish
 (
     [property:JsonKey]
     string Name,
-    DishType Type,
+    List<DishType> Types,
     List<string> Ingredients
 );

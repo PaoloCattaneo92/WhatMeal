@@ -4,7 +4,7 @@ public enum DishType
 {
     ALL = 0,
     PASTA = 100,
-    PANE = 101,
+    ALTRI_CARBO = 101,
     RISO = 102,
     CARNE_BIANCA = 200,
     PESCE = 201,

@@ -14,14 +14,14 @@ public class WhatMealBL
         var forProtein = DishTypeHelp.For(ElementType.PROTEIN);
         var forVeggie = DishTypeHelp.For(ElementType.VEGETABLES);
         var lunch = new Meal(
-                Dish.GetRandom(1, Random.Shared.NextFromIEnumerable(forCarbo), dishes).First(),
-                Dish.GetRandom(1, Random.Shared.NextFromIEnumerable(forProtein), dishes).First(),
-                Dish.GetRandom(1, Random.Shared.NextFromIEnumerable(forVeggie), dishes).First()
+                DishBL.GetRandom(1, Random.Shared.NextFromIEnumerable(forCarbo), dishes).First(),
+                DishBL.GetRandom(1, Random.Shared.NextFromIEnumerable(forProtein), dishes).First(),
+                DishBL.GetRandom(1, Random.Shared.NextFromIEnumerable(forVeggie), dishes).First()
                 );
         var dinner = new Meal(
-            Dish.GetRandom(1, Random.Shared.NextFromIEnumerable(forCarbo), dishes).First(),
-            Dish.GetRandom(1, Random.Shared.NextFromIEnumerable(forProtein), dishes).First(),
-            Dish.GetRandom(1, Random.Shared.NextFromIEnumerable(forVeggie), dishes).First()
+            DishBL.GetRandom(1, Random.Shared.NextFromIEnumerable(forCarbo), dishes).First(),
+            DishBL.GetRandom(1, Random.Shared.NextFromIEnumerable(forProtein), dishes).First(),
+            DishBL.GetRandom(1, Random.Shared.NextFromIEnumerable(forVeggie), dishes).First()
             );
         var day = new Day(lunch, dinner);
         return day;

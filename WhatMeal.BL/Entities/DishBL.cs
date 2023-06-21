@@ -40,9 +40,9 @@ public class DishBL
 
         var dishes = JsonMealRepository.Instance.GetDishes();
 
-        if (type != DishType.ALL)
+        if (type.HasValue && type != DishType.ALL)
         {
-            dishes = dishes.Where(d => d.Type == type);
+            dishes = dishes.Where(d => d.Types.Contains(type.Value));
         }
 
         List<Dish> result;
@@ -58,10 +58,10 @@ public class DishBL
         return result;
     }
 
-    public List<Dish> GetRandom(int count, DishType type, IEnumerable<Dish> dishes)
+    public static List<Dish> GetRandom(int count, DishType type, IEnumerable<Dish> dishes)
     {
         var filtered = type != DishType.ALL
-            ? dishes.Where(d => d.Type == type).ToList()
+            ? dishes.Where(d => d.Types.Contains(type)).ToList()
             : dishes.ToList();
 
         var randomized = new List<Dish>();
@@ -70,8 +70,8 @@ public class DishBL
             filtered = filtered.Where(d => !randomized.Any(d2 => d2.Name == d.Name)).ToList();
             if (filtered.Count == 0)
             {
-                throw new Exception($"No items found for type {type} after filter on {dishes.Count()} dishes");
-                //break;
+                //throw new Exception($"No items found for type {type} after filter on {dishes.Count()} dishes");
+                break;
             }
 
             var picked = filtered[Random.Shared.Next(0, filtered.Count)];

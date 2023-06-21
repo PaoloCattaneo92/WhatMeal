@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using WhatMeal.BL;
+using WhatMeal.Client.Controls;
 using WhatMeal.DAL;
 using WhatMeal.Model;
 
@@ -22,16 +23,24 @@ namespace WhatMeal.Client
         {
             InitializeComponent();
             InitComboBoxes();
+            InitTypesWrapPanel();
 
             JsonMealRepository.Instance = new JsonMealRepository(DATA_FOLDER);
         }
 
+        private void InitTypesWrapPanel()
+        {
+            foreach(var type in Enum.GetValues<DishType>())
+            {
+                var dtc = new DishTypeCheckBox(type);
+                wpTypes.Children.Add(dtc);
+            }
+        }
+
         private void InitComboBoxes()
         {
-            cbTypeAdd.ItemsSource = Enum.GetValues<DishType>();
             cbTypeList.ItemsSource = Enum.GetValues<DishType>();
             cbTypeGetRandom.ItemsSource = Enum.GetValues<DishType>();
-            cbTypeAdd.SelectedIndex = 0;
             cbTypeList.SelectedIndex = 0;
             cbTypeGetRandom.SelectedIndex = 0;
         }
@@ -46,7 +55,7 @@ namespace WhatMeal.Client
         {
             var type = (DishType)cbTypeList.SelectedItem;
             var filtered = type != DishType.ALL
-                ? dishes.Where(d => d.Type == type)
+                ? dishes.Where(d => d.Types.Contains(type))
                 : dishes;
             UpdateItemSource(lvDishes, filtered);
         }
@@ -59,10 +68,15 @@ namespace WhatMeal.Client
 
         private void btnAddDish_Click(object sender, RoutedEventArgs e)
         {
+            var types = wpTypes.Children.OfType<DishTypeCheckBox>()
+                .Where(dtc => dtc.IsChecked)
+                .Select(dtc => dtc.Type);
+
             var dish = new Dish(
-                tbName.Text, 
-                (DishType)cbTypeAdd.SelectedItem, 
+                tbName.Text,
+                types.ToList(), 
                 tbIngredients.Text.Split(',').Select(i => i.Trim()).ToList());
+
             dishes.Add(dish);
             WhatMealBL.Dish.InsertUpdate(dish);
             cbTypeList_SelectionChanged(null, null);
@@ -78,7 +92,7 @@ namespace WhatMeal.Client
 
             var type = (DishType)cbTypeGetRandom.SelectedItem;
 
-            var randomized = WhatMealBL.Dish.GetRandom(count, type, dishes);
+            var randomized = DishBL.GetRandom(count, type, dishes);
             UpdateItemSource(lvRandomized, randomized);
         }
 
