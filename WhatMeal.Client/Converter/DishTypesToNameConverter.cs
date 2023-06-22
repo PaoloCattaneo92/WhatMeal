@@ -4,34 +4,34 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Data;
-using System.Windows.Media;
 using WhatMeal.Model;
 
 namespace WhatMeal.Client;
 
-internal class DishTypesToColorConverter : IValueConverter
+internal class DishTypesToNameConverter : IValueConverter
 {
+    private const string NA = "N.A.";
+
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
         if (value is not List<DishType> types)
         {
-            return DishTypeToColorHelp.NOT_FOUND;
+            return NA;
         }
 
-        if(!int.TryParse(parameter.ToString(), out int index))
+        if (!int.TryParse(parameter.ToString(), out int index))
         {
-            return DishTypeToColorHelp.NOT_FOUND;
+            return NA;
         }
 
         if (types.Count <= index)
         {
-            return DishTypeToColorHelp.NOT_FOUND;
+            return NA;
         }
 
         var dt = types[index];
-        return DishTypeToColorHelp.Convert(dt);
+        return dt.ToString();
     }
 
     public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

@@ -58,11 +58,21 @@ public class DishBL
         return result;
     }
 
-    public static List<Dish> GetRandom(int count, DishType type, IEnumerable<Dish> dishes)
+    public static List<Dish> GetRandom(int count, DishType type, IEnumerable<Dish> dishes, ElementType? notForElement = null, IEnumerable<Dish>? excludeDishes = null)
     {
         var filtered = type != DishType.ALL
             ? dishes.Where(d => d.Types.Contains(type)).ToList()
             : dishes.ToList();
+
+        if(notForElement.HasValue)
+        {
+            filtered = filtered.Where(d => !d.Types.Any(t => t.IsFor(notForElement.Value))).ToList();
+        }
+
+        if(excludeDishes != null)
+        {
+            //filtered = filtered.Where(d => !excludeDishes.Select(d2 => d2.Name).Contains(d.Name)).ToList();
+        }
 
         var randomized = new List<Dish>();
         while (randomized.Count < count)
@@ -76,6 +86,12 @@ public class DishBL
 
             var picked = filtered[Random.Shared.Next(0, filtered.Count)];
             randomized.Add(picked);
+        }
+
+        if(randomized.Count == 0 && count > 0)
+        {
+            //something bad
+            int x = 10;
         }
 
         return randomized;

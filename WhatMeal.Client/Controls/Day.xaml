@@ -7,6 +7,20 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Name="txtDayName" FontWeight="Bold" Text="Monday" Margin="{StaticResource defSmallMargin}" />
+        <TextBlock Text="Lunch" Grid.Row="1" Margin="{StaticResource defSmallMargin}" />
+        <ListView x:Name="lvLunchDishes" Grid.Row="2" Margin="{StaticResource defSmallMargin}"  ItemTemplate="{StaticResource dtlvDishTypes}" />
+
+        <TextBlock Text="Dinner" Grid.Column="1" Grid.Row="1" Margin="{StaticResource defSmallMargin}" />
+        <ListView x:Name="lvDinnerDishes" Grid.Column="1" Grid.Row="2" Margin="{StaticResource defSmallMargin}"  ItemTemplate="{StaticResource dtlvDishTypes}" />
     </Grid>
 </UserControl>

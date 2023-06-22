@@ -22,37 +22,31 @@ namespace WhatMeal.Client
     /// </summary>
     public partial class WeekPlan : Window
     {
-        private readonly Meal[,] meals = new Meal[7, 7];
-
         private readonly List<Dish> dishes;
         private readonly List<WeekValidationRule> rules = WeekValidationRule.Default;
 
-        public WeekPlan()
+        public WeekPlan(WeekRandomizeResult weekResult)
         {
             InitializeComponent();
-            for (int i = 0; i < 7; i++)
-            {
-                
-            }
-            dishes = WhatMealBL.Dish.GetAll();
 
-            Week? week = null;
-            int tries = 0;
-            while(tries < 5000)
+            if(!weekResult.Success || weekResult.Result == null)
             {
-                week = WhatMealBL.RandomizeWeek(dishes);
-                tries++;
-                if(rules.All(r => r.Validate(week)))
+                var buff = $"Week was null after {weekResult.Tries} tries, maybe impossible rules?\n";
+                foreach(var fail in weekResult.Failures)
                 {
-                    break;
+                    buff += $"\n{fail}";
                 }
-                else
-                {
-                    week = null;
-                }
+                MessageBox.Show(buff);
+                return;
             }
 
-            MessageBox.Show($"After {tries} tries the week is: " + week?.Description() ?? "null");
+            txtMessage.Text = $"After {weekResult.Tries} tries the week is: ";
+            int i = 0;
+            var days = weekResult.Result.Days.Select(d => new Controls.Day(d, i++));
+            foreach(var day in days)
+            {
+                spDays.Children.Add(day);
+            }
         }
     }
 }

@@ -33,7 +33,7 @@ namespace WhatMeal.Client.Controls
         {
             Type = type;
             txtName.Text = type.ToString();
-            coloredCheckBox.BackgroundColor = DishTypesToColorConverter.ConvertSingle(type);
+            coloredCheckBox.BackgroundColor = DishTypeToColorHelp.Convert(type);
         }
     }
 }

@@ -5,5 +5,32 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <Thickness x:Key="defMargin">5</Thickness>
+        <Thickness x:Key="defSmallMargin">2</Thickness>
+        <Style x:Key="rectDishType" TargetType="Rectangle">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Width" Value="20" />
+            <Setter Property="Stroke" Value="Black" />
+        </Style>
+        <local:DishTypesToColorConverter x:Key="DishTypesToColorConverter" />
+        <local:DishTypeToVisibilityConverter x:Key="DishTypeToVisibilityConverter" />
+        <local:DishTypeToColorConverter x:Key="DishTypeToColorConverter" />
+        <local:DishTypesToNameConverter x:Key="DishTypesToNameConverter" />
+        <DataTemplate x:Key="dtlvDishTypes" DataType="ListViewItem">
+            <WrapPanel Orientation="Horizontal">
+                <Rectangle Style="{StaticResource rectDishType}"
+                           ToolTip="{Binding Types, Converter={StaticResource DishTypesToNameConverter}, ConverterParameter=0}"
+                                       Visibility="{Binding Types, Converter={StaticResource DishTypeToVisibilityConverter}, ConverterParameter=0}"
+                            Fill="{Binding Types, Converter={StaticResource DishTypesToColorConverter}, ConverterParameter=0}" />
+                <Rectangle Style="{StaticResource rectDishType}"
+                           ToolTip="{Binding Types, Converter={StaticResource DishTypesToNameConverter}, ConverterParameter=1}"
+                                       Visibility="{Binding Types, Converter={StaticResource DishTypeToVisibilityConverter}, ConverterParameter=1}"
+                            Fill="{Binding Types, Converter={StaticResource DishTypesToColorConverter}, ConverterParameter=1}" />
+                <Rectangle Style="{StaticResource rectDishType}"
+                           ToolTip="{Binding Types, Converter={StaticResource DishTypesToNameConverter}, ConverterParameter=2}"
+                                       Visibility="{Binding Types, Converter={StaticResource DishTypeToVisibilityConverter}, ConverterParameter=2}"
+                            Fill="{Binding Types, Converter={StaticResource DishTypesToColorConverter}, ConverterParameter=2}" />
+                <TextBlock Text="{Binding Name}" Margin="5" />
+            </WrapPanel>
+        </DataTemplate>
     </Application.Resources>
 </Application>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -98,7 +99,8 @@ namespace WhatMeal.Client
 
         private void btnWeek_Click(object sender, RoutedEventArgs e)
         {
-            var weekPlan = new WeekPlan();
+            WeekRandomizeResult weekResult = WhatMealBL.RandomizeWeek(dishes, WeekValidationRule.Default);
+            new WeekPlan(weekResult).Show();
         }
     }
 }

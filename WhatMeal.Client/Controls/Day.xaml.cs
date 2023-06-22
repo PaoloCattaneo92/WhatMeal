@@ -24,5 +24,24 @@ namespace WhatMeal.Client.Controls
         {
             InitializeComponent();
         }
+
+        public Day(Model.Day day, int index) : this()
+        {
+            var dayName = "";
+            switch(index)
+            {
+                case 0: dayName = "Monday"; break;
+                case 1: dayName = "Tuesday"; break;
+                case 2: dayName = "Wednesday"; break;
+                case 3: dayName = "Thursday"; break;
+                case 4: dayName = "Friday"; break;
+                case 5: dayName = "Saturday"; break;
+                case 6: dayName = "Sunday"; break;
+            }
+
+            txtDayName.Text = dayName;
+            lvLunchDishes.ItemsSource = day.Lunch.Dishes;
+            lvDinnerDishes.ItemsSource = day.Dinner.Dishes;
+        }
     }
 }

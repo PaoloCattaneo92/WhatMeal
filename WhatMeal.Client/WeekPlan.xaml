@@ -3,26 +3,34 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WhatMeal.Client"
+        xmlns:local="clr-namespace:WhatMeal.Client" xmlns:controls="clr-namespace:WhatMeal.Client.Controls"
         mc:Ignorable="d"
         Background="LightGray"
-        Title="WeekPlan" Height="500" Width="800">
+        WindowStartupLocation="CenterScreen"
+        Title="WeekPlan" Height="1200" Width="800">
     <Window.Resources>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="80" />
-            <RowDefinition Height="80" />
-            <RowDefinition Height="80" />
-            <RowDefinition Height="80" />
-            <RowDefinition Height="80" />
-            <RowDefinition Height="80" />
-            <RowDefinition Height="80" />
+            <RowDefinition Height="*" />
+            <!--<RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />-->
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="txtMessage" Grid.Row="0" Text="Building week..." Margin="{StaticResource defMargin}" />
+        <StackPanel Name="spDays" Grid.Row="1" Orientation="Vertical" CanVerticallyScroll="True">
+            
+        </StackPanel>
+        <!--<controls:Day x:Name="day0" Grid.Row="1" Margin="{StaticResource defMargin}"/>
+        <controls:Day x:Name="day1" Grid.Row="2" Margin="{StaticResource defMargin}"/>
+        <controls:Day x:Name="day2" Grid.Row="3" Margin="{StaticResource defMargin}"/>
+        <controls:Day x:Name="day3" Grid.Row="4" Margin="{StaticResource defMargin}"/>
+        <controls:Day x:Name="day4" Grid.Row="5" Margin="{StaticResource defMargin}"/>
+        <controls:Day x:Name="day5" Grid.Row="6" Margin="{StaticResource defMargin}"/>
+        <controls:Day x:Name="day6" Grid.Row="7" Margin="{StaticResource defMargin}"/>-->
     </Grid>
 </Window>

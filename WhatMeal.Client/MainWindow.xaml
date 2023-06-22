@@ -7,17 +7,8 @@
         mc:Ignorable="d"
         Background="LightGray"
         Loaded="Window_Loaded"
+        WindowStartupLocation="CenterScreen"
         Title="WhatMeal" Height="600" Width="800">
-    <Window.Resources>
-        <!--<local:DishTypeToImgConverter x:Key="DishTypeToImgConverter" />-->
-        <local:DishTypesToColorConverter x:Key="DishTypesToColorConverter" />
-        <local:DishTypeToVisibilityConverter x:Key="DishTypeToVisibilityConverter" />
-        <Style x:Key="rectDishType" TargetType="Rectangle">
-            <Setter Property="Margin" Value="5" />
-            <Setter Property="Width" Value="20" />
-            <Setter Property="Stroke" Value="Black" />
-        </Style> 
-    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -54,34 +45,27 @@
 
             <TextBlock Text="Saved dishes"
                        Margin="10" />
-            
+
             <ComboBox Name="cbTypeList" 
                       SelectionChanged="cbTypeList_SelectionChanged"
                       Grid.Row="1"
-                      Margin="10" />
+                      Margin="10" >
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <WrapPanel Orientation="Horizontal">
+                            <Rectangle Style="{StaticResource rectDishType}"
+                                       Margin="{StaticResource defMargin}"
+                                       Fill="{Binding Converter={StaticResource DishTypeToColorConverter}}" />
+                            <TextBlock Text="{Binding}" Margin="{StaticResource defMargin}" />
+                        </WrapPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
 
             <ListView x:Name="lvDishes" 
                       Grid.Row="2"
                       Margin="10"
-                      >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <WrapPanel Orientation="Horizontal">
-                            <!--<Image Source="{Binding Types, Converter={StaticResource DishTypeToImgConverter}}" Margin="5" Width="20" />-->
-                            <Rectangle Style="{StaticResource rectDishType}"
-                                       Visibility="{Binding Types, Converter={StaticResource DishTypeToVisibilityConverter}, ConverterParameter=0}"
-                            Fill="{Binding Types, Converter={StaticResource DishTypesToColorConverter}, ConverterParameter=0}" />
-                            <Rectangle Style="{StaticResource rectDishType}"
-                                       Visibility="{Binding Types, Converter={StaticResource DishTypeToVisibilityConverter}, ConverterParameter=1}"
-                            Fill="{Binding Types, Converter={StaticResource DishTypesToColorConverter}, ConverterParameter=1}" />
-                            <Rectangle Style="{StaticResource rectDishType}"
-                                       Visibility="{Binding Types, Converter={StaticResource DishTypeToVisibilityConverter}, ConverterParameter=2}"
-                            Fill="{Binding Types, Converter={StaticResource DishTypesToColorConverter}, ConverterParameter=2}" />
-                            <TextBlock Text="{Binding Name}" Margin="5" />
-                        </WrapPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                      ItemTemplate="{StaticResource dtlvDishTypes}" />
         </Grid>
 
         <Grid Grid.Row="1">
@@ -103,16 +87,7 @@
                     Content="Randomize" Background="Orange" Margin="{StaticResource defMargin}"
                     Click="btnGetRandom_Click" />
 
-            <ListView x:Name="lvRandomized" Grid.Row="2" Margin="{StaticResource defMargin}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <WrapPanel Orientation="Horizontal">
-                            <Image Source="{Binding Types, Converter={StaticResource DishTypeToImgConverter}}" Margin="5" Width="20" />
-                            <TextBlock Text="{Binding Name}" Margin="5" />
-                        </WrapPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+            <ListView x:Name="lvRandomized" Grid.Row="2" Margin="{StaticResource defMargin}" ItemTemplate="{StaticResource dtlvDishTypes}" />
         </Grid>
 
         <Button x:Name="btnWeek" Content="Randomize Week" Grid.Row="1"
@@ -124,8 +99,9 @@
                     Margin="10,10,10,5" >
         </StackPanel>
 
-        <ProgressBar x:Name="pbar" IsIndeterminate="True"
-                     Grid.Row="1"
+        <ProgressBar x:Name="pbar"
+                     Value="0"
+                     Grid.Row="2"
                      Grid.ColumnSpan="2" Margin="10,5"
                      Visibility="Hidden"
                      />
